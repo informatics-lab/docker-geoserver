@@ -8,9 +8,7 @@ RUN mkdir -p /tmp/resources/ \
         -O /tmp/resources/geoserver.zip \
     && unzip /tmp/resources/geoserver.zip -d /usr/share/geoserver \
     && echo "export GEOSERVER_HOME=/usr/share/geoserver/geoserver-${GS_VERSION}/" >> ~/.profile \
-    && mv ${GEOSERVER_HOME}/data_dir ${GEOSERVER_HOME}/data_dir_old \
-    && mkdir -p ${GEOSERVER_HOME}/data_dir \
-    && mkdir -p ${GEOSERVER_HOME}/httpdocs
+    && mv ${GEOSERVER_HOME}/data_dir ${GEOSERVER_HOME}/data_dir_old
 # Delete resources after installation
 RUN rm -rf /tmp/resources
 
